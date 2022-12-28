@@ -20,10 +20,11 @@ export const signInUser = createAsyncThunk('signinuser',async(body)=>{
     return await res.json()
 })
 export const signUpUser = createAsyncThunk('signupuser',async(body)=>{
-    const res = await fetch("api",{
+    const res = await fetch("https://assignment-api.piton.com.tr/api/v1/user/register ",{
         method:"post",
         headers:{
             'Content-Type':"application/json",
+            'accept':"application/json"
 
         },
         body:JSON.stringify(body)
@@ -40,7 +41,7 @@ const authSlice = createSlice({
 
             state.token = localStorage.getItem("token")
         },
-        addName: (state,action)=>{
+        addUser: (state,action)=>{
 
             state.user = localStorage.getItem("user")
         },
@@ -58,8 +59,7 @@ const authSlice = createSlice({
             state.loading = false;
             if(error){
                 state.error = error;
-            }
-            else{
+            }else{
                 state.message = message;
                 state.token = token;
                 state.user = user;
@@ -72,7 +72,7 @@ const authSlice = createSlice({
         [signInUser.rejected]: (state,action)=>{
             state.loading = true
         },
-        /***************signin */
+        /***************register */
 [signUpUser.pending]: (state,action)=>{
     state.loading = true
 },
@@ -80,8 +80,7 @@ const authSlice = createSlice({
     state.loading = false
     if(error){
         state.error = error
-    }
-    else{
+    }else{
         state.message = message
     }
 },
