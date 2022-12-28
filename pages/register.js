@@ -66,7 +66,7 @@ export default function Register(){
                 <div className='text-center'>
                 <button onClick={registerHandle} className="h-14 p-2 text-white  rounded-full w-full my-5 py-2 bg-blue shadow-lg shadow-blue-500/50 hover:shadow-blue-500/40 ">Register</button>
                 <a className='text-gray-600 cursor-pointer'>Forgot Password</a>
-<Link href="/" className='font-semibold text-blue'>Giriş Yap</Link>
+                    <Link href="/" className='font-semibold text-blue'>Giriş Yap</Link>
           
                 </div>
         </div>

@@ -61,12 +61,15 @@ export default function Login(){
                     </label>
                 </div>
                 <div className='text-center'>
-                <button onClick={handleLogin} className="h-14 p-2 text-white  rounded-full w-full my-5 py-2 bg-blue shadow-lg shadow-blue-500/50 hover:shadow-blue-500/40 ">Login</button>
                
+                <button onClick={handleLogin} className="h-14 p-2 text-white  rounded-full w-full my-5 py-2 bg-blue shadow-lg shadow-blue-500/50 hover:shadow-blue-500/40 ">Login</button>
+              
                 <a className='text-gray-600 cursor-pointer'>Forgot Password</a>
-<Link href="/register" className='font-semibold text-blue'>Kayıt Ol</Link>
+                    
+                    <Link href="/register" className='font-semibold text-blue'>Kayıt Ol</Link>
           
                 </div>
+                
         </div>
 
      </div>
