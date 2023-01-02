@@ -2,7 +2,7 @@
 import { AiOutlineMail } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import Link from "next/link"
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { logout ,signInUser } from '../redux/authSlice';
 import { useDispatch } from 'react-redux'
 
@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux'
 export default function Login(){
     
     
-     
+    const [token,setToken] = useState(null)
     const[email,setemail] = useState("")
     const[password,setpassword] = useState("")
 
@@ -25,7 +25,12 @@ export default function Login(){
     
      }
 
+
+
+
+     
     return(
+       
        <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full "> 
      <div className="container  hidden sm:block  h-full w-full bg-gradient-to-b from-dark-blue to-light-blue text-white sm:flex sm:flex-col sm:justify-center  ">
 <div className="mx-auto">
