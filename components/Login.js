@@ -2,15 +2,14 @@
 import { AiOutlineMail } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import Link from "next/link"
-import {useEffect, useState} from 'react'
-import { logout ,signInUser } from '../redux/authSlice';
+import { useState} from 'react'
+import { signInUser } from '../redux/authSlice';
 import { useDispatch } from 'react-redux'
+import {router} from "next/router"
 
 
 export default function Login(){
     
-    
-    const [token,setToken] = useState(null)
     const[email,setemail] = useState("")
     const[password,setpassword] = useState("")
 
@@ -19,12 +18,9 @@ export default function Login(){
     const handleLogin = ()=>{
         console.log(email,password)
         dispatch(signInUser({email,password}))
+        router.push("/products");
      }
-     const logoutHandle = () =>{
-        dispatch(logout)
-    
-     }
-
+   
 
 
 
@@ -79,5 +75,6 @@ export default function Login(){
 
      </div>
        </div>
+      
     )
 }

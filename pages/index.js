@@ -1,16 +1,17 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import Login from '../components/Login'
-import Products from '../components/Products'
+import Products from './products'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import {router} from "next/router"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
  
   const {token} = useSelector(state=>state.user)
-  console.log("token ne",token);
+ 
   return (
     <>
       <Head>
@@ -20,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-      {!token || token ==="" || token === undefined ? <Login/>:<Products token={token} /> }
+      {!token || token ==="" || token === undefined ? <Login/>:router.push("/products") }
         
   
    
