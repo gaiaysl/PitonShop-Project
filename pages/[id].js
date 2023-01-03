@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import { useEffect,useState } from "react"
 import { useSelector } from 'react-redux'
 import Layout from '../components/Layout'
-import {FcLike} from 'react-icons/fc'
+import {AiFillHeart} from 'react-icons/ai'
 
 export default function ProductDetail2(){
 
@@ -39,12 +39,17 @@ const [mounted,setMounted]=useState(false)
         
     }
     },[router,token,coin])
-    console.log("coin neydi",coin);
+   
     return(
 
         <Layout>
-            <div className=" py-6 mx-auto max-w-4xl border-2 border-gray rounded-lg flex flex-row my-32">
+            <div className="relative py-6 mx-auto max-w-4xl border-2 border-gray rounded-lg flex flex-row my-32 flex-wrap items-center justify-center">
+            <div className="absolute flex flex-row gap-1 items-center top-2 right-2">
+                <p className="text-sm ">{productDetail?.product?.likes.length} likes   </p>
+                <AiFillHeart/>
+                </div>
                 <div className="mx-auto ">
+                    
                 <div className="shadow-md  aspect-w-1 aspect-h-1  overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <img
                   src={`https://assignment-api.piton.com.tr${productDetail?.product?.image}`}
@@ -61,7 +66,7 @@ const [mounted,setMounted]=useState(false)
             <div className=" my-44   ">
             
                        <label className=" flex-1 relative block ">
-                        
+                       
                        <div className=" h-11 px-4 bg-blue w-20  border-2 border-gray  rounded p-2 mt-2 py-2  text-sm pt-2 "/>  
                        <span  className=" text-white font-medium absolute top-0 left-0 h-full px-4 flex items-center transition-all  ">{productDetail?.product?.price} ₺ </span>
                        </label>
