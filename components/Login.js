@@ -10,8 +10,8 @@ import {router} from "next/router"
 
 export default function Login(){
     
-    const[email,setemail] = useState("")
-    const[password,setpassword] = useState("")
+    const[email,setEmail] = useState("")
+    const[password,setPassword] = useState("")
 
     
     const dispatch = useDispatch();
@@ -46,7 +46,7 @@ export default function Login(){
                     <input required 
                     type="email" 
                     value={email} 
-                    onChange={(e)=> setemail(e.target.value)}
+                    onChange={(e)=> setEmail(e.target.value)}
                     className="w-full h-14 px-4  border-2 border-gray-100 rounded-full p-2 mt-2 py-2 focus:bg-gray-50 focus:outline-none peer text-sm pt-2 "/>  
                     <span  className=" text-gray-300 absolute top-0 left-0 h-full px-4 flex items-center transition-all peer-focus:h-7 peer-focus:text-gray-400 peer-focus:text-sm peer-valid:text-gray-400 peer-valid:h-7 peer-valid:text-sm mt-1  ">< AiOutlineMail/> Email Address</span>
                     </label>
@@ -56,7 +56,7 @@ export default function Login(){
                     <input required 
                     type="password" 
                     value={password} 
-                    onChange={(e)=> setpassword(e.target.value)}
+                    onChange={(e)=> setPassword(e.target.value)}
                     className="w-full h-14 px-4  border-2 border-gray-100 rounded-full p-2 mt-2 py-2 focus:bg-gray-50 focus:outline-none peer text-sm pt-2 "/>
                     <span className=" text-gray-300 absolute top-0 left-0 h-full px-4 flex items-center transition-all peer-focus:h-7 peer-focus:text-gray-400 peer-focus:text-sm peer-valid:text-gray-400 peer-valid:h-7 peer-valid:text-sm mt-1 "><RiLockPasswordFill /> Password</span>
                     </label>

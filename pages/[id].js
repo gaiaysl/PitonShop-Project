@@ -11,24 +11,37 @@ const [productDetail,setProductDetail]=useState([])
 const {token} = useSelector(state=>state.user)
 
 const router = useRouter()
+const {isReady}=router
+const [coin,setCoin]=useState(null)
+const [mounted,setMounted]=useState(false)
 
     useEffect(()=>{
-
-        const fetchData = async()=>{
-            const data = await fetch(`https://assignment-api.piton.com.tr/api/v1/product/get/${router.query.id}`,
-        {
-            method:"get",
-           headers:{
-           "access-token":token,
-           }
-        })
-        const products = await data.json()
-        setProductDetail(products)
-        }
-        fetchData()
-    },[router,token])
-   
+      
+        setCoin(window.localStorage.getItem("token"))
+        if(router.isReady){
+            try{
+                const fetchData = async()=>{
+           
+                    const data = await fetch(`https://assignment-api.piton.com.tr/api/v1/product/get/${router.query.id}`,
+                {
+                    method:"get",
+                   headers:{
+                   "access-token":coin,
+                   }
+                })
+                const products = await data.json()
+                setProductDetail(products)
+                }
+                fetchData()
+            } catch (err){
+                console.log(err)
+            }
+        
+    }
+    },[router,token,coin])
+    console.log("coin neydi",coin);
     return(
+
         <Layout>
             <div className=" py-6 mx-auto max-w-4xl border-2 border-gray rounded-lg flex flex-row my-32">
                 <div className="mx-auto ">
