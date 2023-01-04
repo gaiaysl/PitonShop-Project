@@ -43,14 +43,14 @@ const [mounted,setMounted]=useState(false)
     return(
 
         <Layout>
-            <div className="relative py-6 mx-auto max-w-4xl border-2 border-gray rounded-lg flex flex-row my-32 flex-wrap items-center justify-center">
-            <div className="absolute flex flex-row gap-1 items-center top-2 right-2">
+            <div className="relative shadow-md  aspect-w-1 aspect-h-1 py-6 mt-5  mx-auto max-w-4xl border-2 border-gray rounded-lg flex flex-row sm:my-36 flex-wrap  ">
+            <div className="absolute  top-1  flex flex-row gap-1 items-center sm:top-2 right-2">
                 <p className="text-sm ">{productDetail?.product?.likes.length} likes   </p>
                 <AiFillHeart/>
                 </div>
                 <div className="mx-auto ">
                     
-                <div className="shadow-md  aspect-w-1 aspect-h-1  overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                <div className="  overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <img
                   src={`https://assignment-api.piton.com.tr${productDetail?.product?.image}`}
                  
@@ -58,17 +58,17 @@ const [mounted,setMounted]=useState(false)
                 />
               </div>
                 </div>
-                <div className="  mx-auto px-2  w-80 -ml-4  ">
+                <div className="sm:mx-auto sm:px-4  sm:w-80 py-4  ">
                 
-            <h2 className="font-bold py-4 text-xl ">{productDetail?.product?.name}</h2>
-            <p className="text-sm ">{productDetail?.product?.description}</p>
+            <h2 className="font-bold sm:py-4 sm:text-xl text-center sm:text-start ">{productDetail?.product?.name}</h2>
+            <p className="text-sm text-center sm:text-start py-2 ">{productDetail?.product?.description}</p>
             </div>
-            <div className=" my-44   ">
+            <div className=" sm:my-44 ">
             
                        <label className=" flex-1 relative block ">
                        
-                       <div className=" h-11 px-4 bg-blue w-20  border-2 border-gray  rounded p-2 mt-2 py-2  text-sm pt-2 "/>  
-                       <span  className=" text-white font-medium absolute top-0 left-0 h-full px-4 flex items-center transition-all  ">{productDetail?.product?.price} ₺ </span>
+                       <div className=" h-11 bg-blue sm:w-24 w-32  border-2 border-gray  rounded-lg  p-2 mt-2 py-2  text-sm pt-2 "/>  
+                       <span  className=" text-white font-medium px-12  absolute top-0 left-0 h-full sm:px-4 flex items-center transition-all  ">{productDetail?.product?.price} ₺ </span>
                        </label>
                    </div>
                    </div>

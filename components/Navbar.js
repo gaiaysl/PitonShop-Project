@@ -32,7 +32,7 @@ export default function Navbar(){
             <button  className="text-2xl pb-1  h-9 mt-3 text-white w-40 rounded-full  bg-blue shadow-lg shadow-blue-500/50 hover:shadow-blue-500/40 ">Piton<span className="text-purple-400">Shop</span></button>
             </a>
             
-            <button onClick={logoutHandle} className="text-sm font-semibold  bg-white h-7 mt-4 w-20 rounded-full  shadow-lg shadow-gray-300/50 hover:shadow-gray-500/40 ">Logout</button>
+            <button onClick={logoutHandle} className="text-sm font-semibold  bg-white h-7 mt-4 w-20 rounded-full  shadow-lg shadow-gray-300/50 hover:shadow-gray/50 hover:backdrop-blur-xl hover:drop-shadow-2xl transition-all ease-in-out duration-400 ">Logout</button>
                         
             </div>
             </div>

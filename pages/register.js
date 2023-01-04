@@ -1,23 +1,24 @@
 
 import { AiOutlineMail } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
-import { FaUserAlt } from 'react-icons/fa';
-import { AiFillPhone } from 'react-icons/ai';
 import Link from "next/link"
 import {useDispatch} from "react-redux"
 import { signUpUser } from '../redux/authSlice';
 import { useState } from 'react';
+import {router} from "next/router"
 
 export default function Register(){
     const[name,setname] = useState("")
     const[email,setemail] = useState("")
     const[password,setpassword] = useState("")
 
-    
+   
+
     const dispatch = useDispatch();
     const registerHandle = ()=>{
         console.table(name,email,password)
         dispatch(signUpUser({name,email,password}))
+        router.push("/");
      }
 
     return(
@@ -43,6 +44,7 @@ export default function Register(){
                     <span  className=" text-gray-300 absolute top-0 left-0 h-full px-4 flex items-center transition-all peer-focus:h-7 peer-focus:text-gray-400 peer-focus:text-sm peer-valid:text-gray-400 peer-valid:h-7 peer-valid:text-sm mt-1  ">< AiOutlineMail/> Full Name </span>
                     </label>
                 </div>
+
                 <div className="flex flex-col ">
                     <label className=" flex-1 relative block ">
                     <input required 

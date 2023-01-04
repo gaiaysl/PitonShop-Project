@@ -84,10 +84,10 @@ const handleUnlike = (key) =>{
         <div className=" rounded-lg grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
       
           {urun?.products?.map((product,index) => (
-            <div key={index} className=" max-w-sm relative  p-6 bg-white border border-gray rounded-lg shadow-md ">
+            <div key={index} className="hover:backdrop-blur-xl hover:drop-shadow-2xl transition-all ease-in-out duration-400 max-w-sm relative  p-6 bg-white border border-gray rounded-lg shadow-md ">
                 
 
-                <input type="checkbox" defaultChecked={product.likes>0?true:false} onClick={()=>product.likes<1? handleLike(product.id):handleUnlike(product.id)} className="absolute top-0 right-0 mr-2 w-4 h-4  mt-1 border-lightGray rounded  focus:ring-red-500  focus:ring-1 checked:bg-red-500 cursor-pointer transition duration-200 "/>
+                <input type="checkbox" defaultChecked={product.likes>0?true:false} onClick={()=>product.likes<1? handleLike(product.id):handleUnlike(product.id)} className=" absolute top-0 right-0 mr-2 mt-2 w-4 h-4  border-lightGray rounded  focus:ring-red-500  focus:ring-1 checked:bg-red-500 cursor-pointer transition duration-200 " />
             
 <Link href={`/${product.id}`} key={index}>
 
